@@ -2,7 +2,7 @@
 
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import { mongoConnect } from "./src/config/MangoConnection.js";
 
 const app = express();
 app.use(cors());
@@ -25,3 +25,6 @@ app.get("/", (req, res) => {
     message: "your server is running healthy",
   });
 });
+
+//connet DB to server
+mongoConnect();
